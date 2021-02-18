@@ -1,0 +1,11 @@
+﻿body {
+    background-color: #edc6ff;
+}
+
+h1, h2, h3 {
+    color: blueviolet;
+}
+
+span {
+    font-weight: bold;
+}
