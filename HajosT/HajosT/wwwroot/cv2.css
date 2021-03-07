@@ -25,8 +25,8 @@ div.szines {
     border-color: blueviolet;
     border-width: 1px;
     border-style: dotted;
-    width: 100%;
     margin: 10px;
+    flex: 1 1 auto;
 }
 
 h1,
@@ -40,11 +40,14 @@ a {
     border-radius: 25px;
     background-color: plum;
     color: white;
+    
 }
 
     a:hover {
         background-color: purple;
     }
+
+    .szineshatterlink{display:block;}
 
 span {
     font-weight: bold;
@@ -77,9 +80,7 @@ body {
    
 }
 
-div{max-width:100%;
-   
-}
+
 
 
 
