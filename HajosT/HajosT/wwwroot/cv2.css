@@ -69,11 +69,19 @@ img {
     margin: 20px;
 }
 
+/*mobile-first*/
 body {
     flex-direction: column;
     justify-content: space-evenly;
     margin: auto;
+   
 }
+
+div{max-width:100%;
+   
+}
+
+
 
 /* 800px-nél nagyobb képernyő*/
 @media screen and (min-width: 800px) {
