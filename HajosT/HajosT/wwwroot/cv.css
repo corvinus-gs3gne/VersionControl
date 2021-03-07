@@ -44,12 +44,17 @@ a {
     padding: 10px;
     border-radius: 25px;
     background-color: plum;
-    color: white;
+    display:block;
 }
 
     a:hover {
-        /* vegyük észre, hogy örökli a tulajdonságokat a szülőtől, egyet közülük felülírunk*/
+        
         background-color: purple;
+    }
+    
+    a:visited{ color: rebeccapurple;}
+    a:link {
+        color: white;
     }
 
 

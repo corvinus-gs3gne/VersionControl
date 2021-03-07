@@ -1,0 +1,113 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(227, 212, 241);
+    font-family: "Architects Daughter", cursive;
+    color: white;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+div.szines {
+    background-color: #edc6ff;
+    border-radius: 15px;
+    padding: 2px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-color: blueviolet;
+    border-width: 1px;
+    border-style: dotted;
+    width: 100%;
+    margin: 10px;
+}
+
+h1,
+h2,
+h3 {
+    color: purple;
+}
+
+a {
+    padding: 10px;
+    border-radius: 25px;
+    background-color: plum;
+    color: white;
+}
+
+    a:hover {
+        background-color: purple;
+    }
+
+span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+li,
+ul {
+    font-size: medium;
+    margin: 0;
+    text-align: left;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+}
+
+#kep {
+    margin: 20px;
+}
+
+body {
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+/* 800px-nél nagyobb képernyő*/
+@media screen and (min-width: 800px) {
+    body {
+        flex-direction: column;
+        max-width: 1140px;
+        justify-content: space-evenly;
+        flex-basis: auto;
+        display: flex;
+    }
+
+    .flex-container {
+        display: flex;
+        width: 100%;
+    }
+
+    #kedvencek div {
+        flex: 1 1 auto;
+    }
+
+    #magamrol {
+        flex: 1 1 55%;
+    }
+
+    #kep {
+        flex: 1 1 45%;
+    }
+
+    .stretch {
+        align-self: stretch;
+    }
+
+    .nomarginontheside {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
