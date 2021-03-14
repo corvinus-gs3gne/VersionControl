@@ -1,9 +1,10 @@
-﻿html,
+﻿
 body {
-    height: 100%;
+    
     flex-direction: column;
     justify-content: space-evenly;
     margin: auto;
+    background-color: rgba(87, 231, 255, 0.4);
 }
 
 div {
@@ -12,10 +13,10 @@ div {
 
 #kulso {
     height: 100%;
-    width: 80%;
+    
     margin: auto;
-    /* background-color: RGB(222, 226, 255);*/
-    background-color: rgba(87, 231, 255, 0.4);
+    
+    
     flex-direction: column;
 }
 
@@ -24,8 +25,8 @@ div {
 }
 
 #kozepso {
-    flex-direction: column;
-    flex-wrap: wrap-reverse;
+    flex-direction: column-reverse;
+    
 }
 
 #valaszok {
@@ -101,6 +102,11 @@ img {
 
 /* 800px-nél nagyobb képernyő*/
 @media only screen and (min-width: 800px) {
+    html, body {
+        height: 100%;
+        
+    }
+
     body {
         flex-direction: column;
         justify-content: space-evenly;
@@ -111,7 +117,7 @@ img {
     #kozepso {
         flex-direction: row;
         flex-grow: 1;
-        flex-wrap: nowrap;
+       
     }
 
     #valaszok {
