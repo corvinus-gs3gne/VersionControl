@@ -1,0 +1,124 @@
+﻿html,
+body {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+div {
+    margin: 10px;
+}
+
+#kulso {
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    /* background-color: RGB(222, 226, 255);*/
+    background-color: rgba(87, 231, 255, 0.4);
+    flex-direction: column;
+}
+
+#kerdes_szoveg {
+    font-size: 20px;
+}
+
+#kozepso {
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+}
+
+#valaszok {
+    flex-grow: 1;
+    flex-shrink: 1;
+    display: flex; /*kell?*/
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#kep {
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#vezerlo {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.gomb {
+    padding: 20px;
+    width: 80px;
+    background-color: rgba(87, 231, 255, 0.7);
+    border: 2px dotted navy;
+    color: navy;
+    font-weight: bolder;
+    cursor: pointer;
+    text-align: center;
+}
+
+.kattinthato:hover {
+    background-color: aquamarine;
+    color: navy;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.flexbox {
+    display: flex;
+    max-width: 100%;
+}
+
+.jo {
+    background-color: limegreen;
+}
+
+.rossz {
+    background-color: lightcoral;
+}
+
+.kerek {
+    border-radius: 15px;
+}
+
+.sargadoboz {
+    background-color: rgb(255, 245, 150);
+    color: sandybrown;
+    padding: 20px;
+    font-weight: bold;
+    border: 2px dotted sandybrown;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+}
+
+/* 800px-nél nagyobb képernyő*/
+@media only screen and (min-width: 800px) {
+    body {
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex-basis: auto;
+        display: flex;
+    }
+
+    #kozepso {
+        flex-direction: row;
+        flex-grow: 1;
+        flex-wrap: nowrap;
+    }
+
+    #valaszok {
+        flex-grow: 1;
+        flex-shrink: 1;
+        display: flex; /*kell?*/
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
