@@ -5,6 +5,9 @@
     <title>Hajós teszt</title>
     <link href="hajo.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="hetedik.js">
+
+    </script>
 </head>
 <body>
     <div id="kulso" class="flexbox kerek">
@@ -18,29 +21,29 @@
         </div>
         <div id="kozepso" class="flexbox kerek">
             <div id="valaszok" class="kerek">
-                <div id="valasz1" class="valasz kerek sargadoboz">
+                <div id="valasz1" class="valasz kerek sargadoboz" onclick="coloring(1)">
                     Sed ante lorem, ultricies vel justo et, imperdiet tempus erat. Nulla
                     facilisi. Pellentesque sed semper elit, a bibendum ipsum. Phasellus
                     tincidunt efficitur ante
                 </div>
-                <div id="valasz2" class="valasz kerek sargadoboz">
+                <div id="valasz2" class="valasz kerek sargadoboz" onclick="coloring(2)">
                     Válasz 2 Sed ante lorem, ultricies vel justo et, imperdiet tempus
                     erat. Nulla facilisi. Pellentesque sed semper elit, a bibendum
                     ipsum. Phasellus tincidunt efficitur ante
                 </div>
-                <div id="valasz3" class="valasz kerek sargadoboz">
+                <div id="valasz3" class="valasz kerek sargadoboz" onclick="coloring(3)">
                     Válasz 3 Sed ante lorem, ultricies vel justo et, imperdiet tempus
                     erat. Nulla facilisi. Pellentesque sed semper elit, a bibendum
                     ipsum. Phasellus tincidunt efficitur ante
                 </div>
             </div>
-            <div id="kep" class="kerek">
-                <img id="kep1" src="https://szoft1.comeback.hu/hajo/teszt-0050.jpg" />
+            <div id="kep" class="kerek" >
+                
             </div>
         </div>
         <div id="vezerlo" class="flexbox kerek">
-            <div class="gomb kattinthato kerek">Vissza</div>
-            <div class="gomb kattinthato kerek">Előre</div>
+            <div class="gomb kattinthato kerek" onclick="vissza()">Vissza</div>
+            <div class="gomb kattinthato kerek" onclick="elore()">Előre</div>
         </div>
     </div>
 </body>

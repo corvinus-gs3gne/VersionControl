@@ -74,11 +74,13 @@ div {
 }
 
 .jo {
-    background-color: limegreen;
+    background-color: limegreen !important;
+    color: white !important;
 }
 
 .rossz {
-    background-color: lightcoral;
+    background-color: lightcoral !important;
+    color: white !important;
 }
 
 .kerek {
