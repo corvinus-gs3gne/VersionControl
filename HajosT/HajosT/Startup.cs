@@ -16,6 +16,7 @@ namespace HajosT
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -27,10 +28,11 @@ namespace HajosT
             }
 
             app.UseHttpsRedirection();
-            DefaultFilesOptions options = new DefaultFilesOptions();
-            options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("hajo.html");
-            app.UseDefaultFiles(options);
+            /* DefaultFilesOptions options = new DefaultFilesOptions();
+             options.DefaultFileNames.Clear();
+             options.DefaultFileNames.Add("hajo.html");
+             app.UseDefaultFiles(options);*/
+            app.UseDefaultFiles();
             app.UseStaticFiles(); //A sorrend fontos!
 
             app.UseRouting();
@@ -42,6 +44,11 @@ namespace HajosT
                     await context.Response.WriteAsync("Hello World!");
                 });
             });*/
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
