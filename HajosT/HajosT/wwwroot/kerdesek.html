@@ -10,9 +10,9 @@
     <script>
         fetch('/questions/all')
             .then(response => response.json())
-            .then(data => kiiratás(data)
-
-            );
+            .then(data => kiiratás(data))
+        
+            ;
 
         function kiiratás(lista) {
             console.log(lista)

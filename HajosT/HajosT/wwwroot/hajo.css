@@ -38,6 +38,10 @@ div {
 }
 
 #kep {
+   
+}
+
+.kepesdiv {
     flex-grow: 0;
     flex-shrink: 0;
     max-width: 100%;
@@ -102,6 +106,10 @@ img {
     display: block;
 }
 
+.disappear{
+    display: none;
+}
+
 /* 800px-nél nagyobb képernyő*/
 @media only screen and (min-width: 800px) {
     html, body {
@@ -129,4 +137,7 @@ img {
         flex-direction: column;
         justify-content: space-around;
     }
+
+
+    
 }

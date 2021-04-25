@@ -21,5 +21,22 @@ namespace HajosT.Controllers
 
             return new JsonResult(kérdések);
         }
+
+        [HttpGet]
+        [Route("questions/{sorszam}")]
+        public ActionResult M2(int sorszam)
+        {
+            hajostesztContext context = new hajostesztContext();
+            var kerdes = (from x in context.Questions
+                          where x.QuestionId == sorszam
+                          select x).FirstOrDefault();
+
+            if (kerdes == null) return BadRequest("Nincs ilyen sorszámú kérdés");
+
+            return new JsonResult(kerdes);
+        }
+
+
+
     }
 }
