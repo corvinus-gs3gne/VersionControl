@@ -10,20 +10,20 @@ namespace HajosT.Controllers
 {
     //[Route("api/[controller]")]
     [ApiController]
-    public class BoatController : ControllerBase
+    public class QuestionController : ControllerBase
     {
         [HttpGet]
-        [Route("questions/all")]
-        public ActionResult M1()
+        [Route("questions/count2")]
+        public int M1()
         {
             hajostesztContext context = new hajostesztContext();
-            var kérdések = from x in context.Questions select x.QuestionText;
-
-            return new JsonResult(kérdések);
+            int kerdesekSzama = context.Questions.Count();
+            return kerdesekSzama;
         }
 
         [HttpGet]
-        [Route("questions/{sorszam}")]
+        [Route("questionskettopontnulla/{sorszam}")]
+
         public ActionResult M2(int sorszam)
         {
             hajostesztContext context = new hajostesztContext();
@@ -31,20 +31,10 @@ namespace HajosT.Controllers
                           where x.QuestionId == sorszam
                           select x).FirstOrDefault();
 
-            if (kerdes == null) return BadRequest("Nincs ilyen sorszámú kérdés");
+            if (kerdes == null) return BadRequest("Nincs ilyen kérdés");
 
             return new JsonResult(kerdes);
+            
         }
-
-        [HttpGet]
-        [Route("questions/count")]
-        public int szamolo() 
-        {
-            hajostesztContext context = new hajostesztContext();
-            int kérdésekSzáma = context.Questions.Count();
-
-            return kérdésekSzáma;
-        }
-
     }
 }

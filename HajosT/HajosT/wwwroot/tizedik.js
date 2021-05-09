@@ -1,36 +1,82 @@
-﻿var kérdések ;
-var n = 1;
+﻿var kérdések;
+
 var ca;
+var hotList = [];
+var questionsInHotList = 3;
+var displayedQuestion;
+var numberOfQuestions;
+var nextQuestion = 1;
+
 
 
 window.onload = (event) => {
-    download(n);
-   
+    init();
+
 }
 
-function download(id) {
+function download(questionNumber, destination) {
 
-    fetch(`/questions/${id}`)
+    fetch(`/questions/${questionNumber}`)
         .then(response => {
             if (!response.ok) {
                 console.error(`Hibás válasz: ${response.status}`)
             }
             else {
 
-              return response.json()
-                
+                return response.json()
+
             }
-                
-            })
-        .then(data => ShowQuestions(data));
+
+        })
+        .then(
+            q => {
+                hotList[destination].question = q;
+                hotList[destination].goodAnswers = 0;
+                console.log(` A ${questionNumber} lett kijelölve a hotList ${destination}. helyére.`)
+                if (displayedQuestion == undefined && destination == 0) {
+                    displayedQuestion = 0;
+                    ShowQuestions();
+
+                }
+            }
+
+        );
+
+
 
 
 }
 
+function init() {
+
+    for (var i = 0; i < questionsInHotList; i++) {
 
 
-function ShowQuestions(n) {
+        let q = {
 
+            questions: {},
+            answers: 0
+
+        }
+
+        hotList[i] = q;
+
+
+        //elso kerdesek letoltese
+
+        for (var i = 0; i < questionsInHotList; i++) {
+
+            download(nextQuestion, i);
+            nextQuestion++;
+        }
+    }
+}
+
+
+function ShowQuestions() {
+
+    let n = hotList[displayedQuestion].question;
+    console.log(n);
     let qtext = document.getElementById("kerdes_szoveg");
     let pic = document.getElementById("kep");
     let v1 = document.getElementById("valasz1");
@@ -48,10 +94,10 @@ function ShowQuestions(n) {
         pic.src = "";
     }
     else {
-        
-        pic.src = "https://szoft1.comeback.hu/hajo/" + n.image; 
+
+        pic.src = "https://szoft1.comeback.hu/hajo/" + n.image;
     }
-    
+
     v1.classList.remove("jo", "rossz");
     v2.classList.remove("jo", "rossz");
     v3.classList.remove("jo", "rossz");
@@ -75,26 +121,19 @@ function coloring(answer) {
         document.getElementById("valasz" + correct).classList.remove("rossz");
         document.getElementById("valasz" + correct).classList.add("jo");
     }
-    
+
 }
 
 
 
 function elore() {
 
-    n = (n + 1) 
-    if (n >= 1) {
+    displayedQuestion++;
+    if (displayedQuestion == questionsInHotList) displayedQuestion = 0; 
+    ShowQuestions();
 
-        download(n)
-        
-    }
-    else {
+    
 
-        n = 1
-        download(n)
-
-    }
-     
 
 }
 
@@ -103,17 +142,17 @@ function vissza() {
 
         n = kérdések.length - 1;
         download(n)
-        
-        
+
+
     }
     else {
         n = n - 1
         download(n)
-        
-        
-        
+
+
+
     }
-    
+
 }
 
 
