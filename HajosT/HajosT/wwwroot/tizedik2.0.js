@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     //Mentett állapot olvasása
-    if (localStorage.getItem('hotList')) {
+    if (localStorage.getItem("hotList")) {
         hotList = JSON.parse(localStorage.getItem("hotList"));
         console.log(hotList,"helo")
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(hotList.length)
 
     //Kezdokerdeslistaletoltese
-    if (hotList.length === 0) {
+    if (!localStorage.getItem("hotList")) {
         for (let i = 0; i < questionsInHotList; i++) {
             kerdesBetoltes(nextQuestion, i)
             nextQuestion++;
@@ -163,10 +163,10 @@ function coloring(n) {
 
     timerHandler = setTimeout(elore, 3000);
 
-    console.log(hotlist,"végén")
+    console.log(hotList,"végén")
 
     localStorage.setItem("hotList", JSON.stringify(hotList));
-    localStorage.setItem("displayedQuestion", JSON.stringify(displayedQuestion));
-    localStorage.setItem("nextQuestion", JSON.stringify(nextQuestion));
+    localStorage.setItem("displayedQuestion", displayedQuestion);
+    localStorage.setItem("nextQuestion",nextQuestion);
   
 }
